@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
+<div class="container-fluid">
+    
+
+ <div class="media">
+    <span class="media-right"><%= image_tag @product.image_url, :width => '300' %></span>
+
+</div>
+<p>   
+  
+  <strong><%= @product.title %></strong>
 </p>
 
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
 </p>
 
 <p>
@@ -32,3 +34,4 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+</div>
