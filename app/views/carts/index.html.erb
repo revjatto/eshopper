@@ -1,2 +1,35 @@
-<h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
+<h1>Items in your cart</h1>
+<p>Please review the item in your cart and proceed</p>
+or
+
+<% if @cart.empty? %>
+<p>There are no items in your shopping cart the moment, start shopping and take advantage of our discount</p>
+
+<% else %>
+
+<%= link_to "Empty the Cart and start again", carts_clear_path %>
+
+<br/><br/>
+
+<% end %>
+
+<% total = 0 %>
+
+
+<ul>
+<% @cart.each do |id, quantity | %>
+
+<% product = Product.find_by_id(id) %>
+<div>
+<li>
+    <%= link_to product.title, product %><br>
+    <p>Details: <%= product.description %></p>
+    <p><strong>Unit Price: </strong> <%= number_to_currency(product.price, :unit => '£') %></p>
+    <p>quantity: <%= quantity %></p>
+</li>
+    <% total += quantity * product.price %>
+    
+<% end %>
+    <p><strong>Total Price of your Item(s): </strong><%= number_to_currency(total, :unit => '£') %></p>
+    </div>
+</ul>
