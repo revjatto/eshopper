@@ -2,15 +2,16 @@
 
 <div class="container-fluid">
     
-
- <div class="media">
-    <span class="media-right"><%= image_tag @product.image_url, :width => '300' %></span>
-
-</div>
-<p>   
+<div class="panel panel-success">
+<div class="panel-heading">
+    <p>   
   
   <strong><%= @product.title %></strong>
 </p>
+    </div>
+    <div class="panel-body">
+ 
+        <span><%= image_tag @product.image_url, :width => '300', class: 'product-img' %></span>
 
 <p>
   <strong>Description:</strong>
@@ -22,16 +23,8 @@
   <%= @product.price %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @product.category %>
-</p>
-
-<p>
-  <strong>Subcategory:</strong>
-  <%= @product.subcategory %>
-</p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 </div>
+    </div>
