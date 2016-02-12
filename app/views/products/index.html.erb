@@ -6,7 +6,7 @@
     <% @products.each do |product| %>
      
      <div class="col-md-5">
-         <div class="panel panel-danger">
+         <div class="panel panel-primary">
              <div class="panel-heading">
                  <h5><%= product.title %></h5>
                   </div>
@@ -17,14 +17,14 @@
         
                   <p><%= truncate product.description, length: 120 %></p>
           
-<p><%= number_to_currency product.price, unit: '£' %></p>
-        
+                  <p><%= number_to_currency product.price, unit: '£' %></p>
+                  <p><%= link_to 'Read More', product, class: 'btn btn-default more' %></p><br><br><br>
        
    
-        <p><%= link_to 'Show', product %> |
-        <%= link_to 'Edit', edit_product_path(product) %> |
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %> |
-            <a href="/carts/<%= product.id %>">Add to Cart</a></p>
+        <p><%= link_to 'Show', product, class: 'btn btn-warning'  %> |
+            <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-success' %> |
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %> |
+            <a class="btn btn-primary btn-md" href="/carts/<%= product.id %>">Add to Cart</a></p>
       </div>
         </div>  
           </div>  
@@ -33,5 +33,5 @@
  </div> 
 <br>
 
-     <p><%= link_to 'New Product', new_product_path %></p>
+     <p><%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %></p>
   

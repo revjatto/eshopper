@@ -44,7 +44,7 @@
 }
 
 .panel-body{
-    height: 590px;
+    height: 660px;
     width: 300px;
     padding: 10px;
     margin-bottom: 50px;
@@ -52,5 +52,9 @@
 }
 
 .product-img{
-    float: left;
+    float: right;
+}
+.more{
+    float: right;
+    color: crimson;
 }
